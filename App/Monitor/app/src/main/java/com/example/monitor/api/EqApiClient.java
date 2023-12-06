@@ -8,7 +8,7 @@ import retrofit2.http.GET;
 public class EqApiClient {
     public interface EqService {
         @GET("all_hour.geojson")
-        Call<String> getEarthquakes();
+        Call<EarthquakeJSONResponse> getEarthquakes();
     }
     private final Retrofit retrofit = new Retrofit.Builder()
             .baseUrl("https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/")
