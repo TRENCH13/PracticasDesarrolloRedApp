@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+message AudioChunk {
+  bytes data = 1;
+}
+
+message IdAudio{
+  int32 id = 1;
+}
+
+service AudioService {
+  rpc StreamAudio(IdAudio) returns (stream AudioChunk);
+}
