@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Practica2</string>
+
+    <string name="add_height">Add Height</string>
+    <string name="write_height_cm">Add Height in cm</string>
+    <string name="add_weight">Add Weight</string>
+    <string name="write_weight_kg">Add Weight in cm</string>
+    <string name="calc_imc">Calculate IMC</string>>
+
+    <string name="result_message">All OK %f</string>
+    <string name="error_message">ERROR</string>>
+</resources>
