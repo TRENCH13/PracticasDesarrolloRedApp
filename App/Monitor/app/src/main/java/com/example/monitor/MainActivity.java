@@ -1,15 +1,13 @@
 package com.example.monitor;
 
+import android.os.Bundle;
+import android.widget.Toast;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
-import android.os.Bundle;
-import android.widget.Toast;
-
 import com.example.monitor.databinding.ActivityMainBinding;
-
-import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
     ActivityMainBinding binding;
@@ -32,6 +30,6 @@ public class MainActivity extends AppCompatActivity {
         viewModel.getEqList().observe(this,eqList ->{
             adapter.submitList(eqList);
         });
-        viewModel.getEarthquakes();
+        viewModel.getEqList();
     }
 }
