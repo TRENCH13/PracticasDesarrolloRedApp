@@ -18,18 +18,19 @@ public class MainActivity extends AppCompatActivity {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        MainViewModel viewModel = new ViewModelProvider(this).get(MainViewModel.class);
+        MainViewModel viewModel = new ViewModelProvider(this, new MainViewModelFactory(getApplication()))
+                .get(MainViewModel.class);
         binding.eqRecycler.setLayoutManager(new LinearLayoutManager(this));
 
-        EqAdapter adapter = new EqAdapter();
+        EqAdapter adapter = new EqAdapter(this);
         adapter.setOnItemClickListener(earthquake ->
                 Toast.makeText(MainActivity.this,
                         earthquake.getPlace(),
                         Toast.LENGTH_SHORT).show());
         binding.eqRecycler.setAdapter(adapter);
+        viewModel.downloadEarthquakes();
         viewModel.getEqList().observe(this,eqList ->{
             adapter.submitList(eqList);
         });
-        viewModel.getEqList();
     }
 }
