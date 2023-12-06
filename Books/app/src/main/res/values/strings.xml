@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Books</string>
+    <string name="rating_label">Rating</string>
+    <string name="book_title_label">Book title</string>
+    <string name="book_authors_label">Book authors</string>
+    <string name="save_btn">Save</string>
+    <string name="comment_label">Comment</string>
+</resources>
